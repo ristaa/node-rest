@@ -12,6 +12,8 @@ const Person = require('../models/person.model');
 * Motivation - model (schema) of Motivation
 ******************************************/
 router.get('/', (req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    
     Motivation.find().select('person content _id')
     .populate('person')
     .exec().then( docs => {

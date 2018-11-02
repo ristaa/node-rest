@@ -12,8 +12,6 @@ const Person = require('../models/person.model');
 * Motivation - model (schema) of Motivation
 ******************************************/
 router.get('/', (req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-
     Motivation.find().select('person content _id')
     .populate('person')
     .exec().then( docs => {
@@ -27,7 +25,7 @@ router.get('/', (req, res, next) => {
                     content: doc.content,
                     request: {
                         type: 'GET',
-                        url: 'https://serene-ravine-31000.herokuapp.com/' + doc._id
+                        url: 'http://localhost:5000/motivation/' + doc._id
                     }
                 }
             }),
@@ -71,7 +69,7 @@ router.post('/', (req, res, next) => {
             },
             request: {
                 type: 'GET',
-                url: 'https://serene-ravine-31000.herokuapp.com/' + result._id 
+                url: 'http://localhost:5000/motivation/' + result._id 
             }
         });
     }).catch(err => {
@@ -82,13 +80,12 @@ router.post('/', (req, res, next) => {
 
 // GET motivation by Id
 router.get('/:motivationId', (req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
     Motivation.findById(req.params.motivationId).populate('person').exec().then(motivation =>{
         res.status(200).json({
             motivation: motivation,
             request: {
                 type: 'GET',
-                url: 'https://serene-ravine-31000.herokuapp.com/'
+                url: 'http://localhost:5000/motivation/'
             }
         });
     }).catch(err => {

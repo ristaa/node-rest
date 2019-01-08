@@ -3,7 +3,7 @@ let Schema = mongoose.Schema;
 
 let motivationSchema = Schema({
     _id: Schema.Types.ObjectId,
-    person: { type: Schema.Types.ObjectId, ref: 'Person' },
+    person: {type: Schema.Types.ObjectId, ref: 'Person' },
     content: String,
     fans: [{ type: Schema.Types.ObjectId, ref: 'Person' }]
   });

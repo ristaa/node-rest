@@ -13,7 +13,7 @@ const Person = require('../models/person.model');
 ******************************************/
 router.get('/', (req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
-    
+
     Motivation.find().select('person content _id')
     .populate('person')
     .exec().then( docs => {
@@ -82,6 +82,7 @@ router.post('/', (req, res, next) => {
 
 // GET motivation by Id
 router.get('/:motivationId', (req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
     Motivation.findById(req.params.motivationId).populate('person').exec().then(motivation =>{
         res.status(200).json({
             motivation: motivation,

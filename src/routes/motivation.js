@@ -27,7 +27,7 @@ router.get('/', (req, res, next) => {
                     content: doc.content,
                     request: {
                         type: 'GET',
-                        url: 'http://localhost:5000/motivation/' + doc._id
+                        url: 'https://serene-ravine-31000.herokuapp.com/' + doc._id
                     }
                 }
             }),
@@ -71,7 +71,7 @@ router.post('/', (req, res, next) => {
             },
             request: {
                 type: 'GET',
-                url: 'http://localhost:5000/motivation/' + result._id 
+                url: 'https://serene-ravine-31000.herokuapp.com/' + result._id 
             }
         });
     }).catch(err => {
@@ -88,7 +88,7 @@ router.get('/:motivationId', (req, res, next) => {
             motivation: motivation,
             request: {
                 type: 'GET',
-                url: 'http://localhost:5000/motivation/'
+                url: 'https://serene-ravine-31000.herokuapp.com/'
             }
         });
     }).catch(err => {

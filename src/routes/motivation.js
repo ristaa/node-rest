@@ -25,7 +25,7 @@ router.get('/', (req, res, next) => {
                     content: doc.content,
                     request: {
                         type: 'GET',
-                        url: 'http://localhost:5000/motivation/' + doc._id
+                        url: 'https://serene-ravine-31000.herokuapp.com/motivation/' + doc._id
                     }
                 }
             }),
@@ -38,12 +38,13 @@ router.get('/', (req, res, next) => {
 });
 
 /*****************************************
-* POST new motivation accorind to personId
+* POST new motivation according to personId
 * ------------------------------------------
 * Person - model (schema) of Person
 * personId - key in Person model
 *****************************************/
 router.post('/', (req, res, next) => {
+
     Person.findById(req.body.personId)
     .then(person => {
         if(!person){
@@ -51,6 +52,7 @@ router.post('/', (req, res, next) => {
                 message: 'Person doesnt exist'
             });
         }
+
         const motivation = new Motivation({
             _id: new mongoose.Types.ObjectId(),
             person: req.body.personId,
@@ -69,7 +71,7 @@ router.post('/', (req, res, next) => {
             },
             request: {
                 type: 'GET',
-                url: 'http://localhost:5000/motivation/' + result._id 
+                url: 'https://serene-ravine-31000.herokuapp.com/motivation/' + result._id 
             }
         });
     }).catch(err => {
@@ -85,7 +87,7 @@ router.get('/:motivationId', (req, res, next) => {
             motivation: motivation,
             request: {
                 type: 'GET',
-                url: 'http://localhost:5000/motivation/'
+                url: 'https://serene-ravine-31000.herokuapp.com/motivation/'
             }
         });
     }).catch(err => {

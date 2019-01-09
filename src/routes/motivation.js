@@ -16,6 +16,7 @@ router.get('/', (req, res, next) => {
     .populate('person')
     .exec().then( docs => {
         console.log(docs);
+        res.header('Access-Control-Allow-Origin', '*');
         res.status(200).json({
             count: docs.length,
             motivations: docs.map(doc => {

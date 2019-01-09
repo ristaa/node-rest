@@ -8,6 +8,7 @@ const Person = require('../models/person.model');
 router.get('/', (req, res, next) => {
     Person.find().exec().then( docs => {
         console.log(docs);
+        res.header('Access-Control-Allow-Origin', '*');
         res.status(200).json(docs);
     }).catch(err => {
         console.log(doerrcs);

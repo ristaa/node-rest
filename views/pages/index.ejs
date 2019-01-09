@@ -9,12 +9,14 @@
 <div class="jumbotron text-center">
   <div class="container">
     <h1>REST API</h1>
-    <p>There is a list of all REST API URLs for this heroku/nodejs app.</p>
+    <p>There is a list of all REST API URLs for this nodejs app deployed with heroku.</p>
   </div>
 </div>
 <div class="container">
   <div class="row">
-    Created with NodeJS (express, ejs) and mongodb (mongoose)
+    <div class="col-md-12">
+      <h3 class="text-center">Created with <b>NodeJS</b> (express) and <b>mongodb</b> (mongoose)</h3>
+    </div>
   </div>
 </div>
 <div class="container">
@@ -25,21 +27,21 @@
       <ul>
         <li>https://serene-ravine-31000.herokuapp.com/ <br> Home</li>
         <li>https://serene-ravine-31000.herokuapp.com/motivation <br> GET Motivations</li>
-        <li>https://serene-ravine-31000.herokuapp.com/motivation/:motivationID <br> GET Motivation by ID</li>
+        <li>https://serene-ravine-31000.herokuapp.com/motivation/<b>:motivationID</b> <br> motivationID - change by id of desired motivation<br>GET Motivation by ID</li>
         <li>https://serene-ravine-31000.herokuapp.com/person <br> GET Persons</li>
-        <li>https://serene-ravine-31000.herokuapp.com/person/:personID <br> Get Pesron by ID</li>
+        <li>https://serene-ravine-31000.herokuapp.com/person/<b>:personID</b> <br> personID - change by id of desired person <br> Get Pesron by ID</li>
       </ul>
     </div>
     <div class="col-md-6">
       <h3>POST URLs</h3>
       <ul>
-        <li>https://serene-ravine-31000.herokuapp.com/person/ <br> POST person <br>email, name, age - <b>required</b></li>
-        <li>https://serene-ravine-31000.herokuapp.com/motivation <br> POST motivation <br>personId, content - <b>required</b>)</li>
+        <li>https://serene-ravine-31000.herokuapp.com/person/ <br> POST person <br><b>required - email, name, age</b></li>
+        <li>https://serene-ravine-31000.herokuapp.com/motivation <br> POST motivation <br><b>required - personId, content</b></li>
       </ul>
     </div>
   </div> <!-- row -->
    <div class="alert alert-info text-center" role="alert" style="margin-top: 40px;">
-    <span style="color: black;">By</span> <a target="_blank" href="milosristic.com">milosristic.com</a>
+    <span style="color: black;">by</span> <a target="_blank" href="milosristic.com">milosristic.com</a>
   </div>
 </div>
 

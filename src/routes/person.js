@@ -34,8 +34,9 @@ router.post('/', (req, res, next) => {
         console.log(err);
     })
 
+    res.header('Access-Control-Allow-Origin', '*');
     res.status(201).json({
-        message: 'POST OSOBA',
+        message: 'Person created',
         createdPerson: person
     });
 });

@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
@@ -22,6 +23,7 @@ const app = express();
 const personRouter = require('./src/routes/person');
 const motivationRouter = require('./src/routes/motivation');
 
+app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());

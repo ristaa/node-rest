@@ -80,6 +80,10 @@ router.get('/:personId', (req, res, next) => {
   });
 
   router.post('/send', function(req, res){
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    
     response = {
       name: req.body.name,
       email: req.body.email,

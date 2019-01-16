@@ -5,6 +5,8 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const PORT = process.env.PORT || 5000;
+var multipart = require('connect-multiparty');
+var multipartMiddleware = multipart()
 
 const server = 'ds147723.mlab.com:47723';
 const db = 'heroku_jnshm3fq';
@@ -27,7 +29,6 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-app.use(express.multipart());
 
 app.use((res, req, next) => {
   res.header('Access-Control-Allow-Origin', '*');

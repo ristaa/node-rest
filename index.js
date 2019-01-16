@@ -5,8 +5,6 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const PORT = process.env.PORT || 5000;
-var multipart = require('connect-multiparty');
-var multipartMiddleware = multipart()
 
 const server = 'ds147723.mlab.com:47723';
 const db = 'heroku_jnshm3fq';

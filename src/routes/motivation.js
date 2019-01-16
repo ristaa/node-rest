@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const nodemailer = require('nodemailer');
 
 const Motivation = require('../models/motivation.model');
 const Person = require('../models/person.model');

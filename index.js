@@ -4,7 +4,6 @@ const path = require('path');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const nodemailer = require('nodemailer');
 const PORT = process.env.PORT || 5000;
 
 const server = 'ds147723.mlab.com:47723';

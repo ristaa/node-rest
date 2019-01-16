@@ -4,8 +4,11 @@ const mongoose = require('mongoose');
 const nodemailer = require('nodemailer');
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
+const cors = require('cors');
 
 const Person = require('../models/person.model');
+
+router.use(cors());
 
 // GET all persons
 router.get('/', (req, res, next) => {
@@ -75,7 +78,7 @@ router.get('/:personId', (req, res, next) => {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
-  
+
   router.post('/send', function(req, res){
     response = {
       name: req.body.name,

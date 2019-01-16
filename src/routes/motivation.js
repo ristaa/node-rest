@@ -1,12 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const cors = require('cors');
 
 const Motivation = require('../models/motivation.model');
 const Person = require('../models/person.model');
 
-router.use(cors());
 
 /* ****************************************
 * GET all motivations ---------------------

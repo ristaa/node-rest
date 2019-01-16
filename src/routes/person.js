@@ -60,7 +60,7 @@ router.get('/:personId', (req, res, next) => {
     });
 });
 
-var auth = {
+    var auth = {
     type: 'oauth2',
     user: 'rista90@gmail.com',
     clientId: '1000098009180-ran3i109ahdjcc8qbhq3idrpvm703p63.apps.googleusercontent.com',
@@ -68,6 +68,13 @@ var auth = {
     refreshToken: '1/21WNoCFgbJX164N03keeYVzjjIQxL5fg2N3WaNwdVDE',
     grantType: 'authorization_code'
   };
+  
+
+  router.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
   
   router.post('/send', function(req, res){
     response = {

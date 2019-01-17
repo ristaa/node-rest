@@ -44,8 +44,9 @@ app.use('/person', personRouter);
 app.use('/motivation', motivationRouter);
 
 app
-  .use(express.static(path.join(__dirname, 'public')))
+  .use(express.static(path.join(__dirname, 'client','public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
+  .get('*', (req, res) => { res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))})
   .listen(PORT, () => console.log(`Listening on ${ PORT }`));

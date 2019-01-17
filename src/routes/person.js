@@ -101,16 +101,16 @@ router.get('/:personId', (req, res, next) => {
         text: req.body.message,
         html: 'Your ID is: ' + req.body.message,
     };
-  var transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: auth,
+    var transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: auth,
     });
-  transporter.sendMail(mailOptions, (err, res) => {
-        if (err) {
-            return console.log(err);
-        } else {
-            console.log(JSON.stringify(res));
-        }
+    transporter.sendMail(mailOptions, (err, res) => {
+            if (err) {
+                return console.log(err);
+            } else {
+                console.log(JSON.stringify(res));
+            }
     });
   })
 

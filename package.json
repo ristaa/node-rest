@@ -34,6 +34,7 @@
     "type": "git",
     "url": "https://github.com/ristaa/node-rest"
   },
+  "heroku-postbuild": "cd client && yarn --production=false && yarn run build",
   "keywords": [
     "node",
     "heroku",

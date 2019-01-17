@@ -48,5 +48,5 @@ app
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
-  .get('*', (req, res) => { res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))})
+  .get('*', (req, res) => { res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))})
   .listen(PORT, () => console.log(`Listening on ${ PORT }`));

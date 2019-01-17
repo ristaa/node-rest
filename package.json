@@ -9,7 +9,8 @@
   "scripts": {
     "start": "node index.js",
     "start-watch": "nodemon src/index.js",
-    "test": "node test.js"
+    "test": "node test.js",
+    "heroku-postbuild": "cd client && yarn --production=false && yarn run build",
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -34,7 +35,6 @@
     "type": "git",
     "url": "https://github.com/ristaa/node-rest"
   },
-  "heroku-postbuild": "cd client && yarn --production=false && yarn run build",
   "keywords": [
     "node",
     "heroku",

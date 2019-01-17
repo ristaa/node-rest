@@ -170,3 +170,5 @@ class newPerson extends Component {
     );
   }
 }
+
+export default newPerson;

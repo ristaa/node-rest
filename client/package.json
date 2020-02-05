@@ -13,5 +13,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://serene-ravine-31000.herokuapp.com/"
+  "proxy": "http://localhost:5000/"
 }

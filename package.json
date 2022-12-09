@@ -19,7 +19,7 @@
     "connect-multiparty": "^2.2.0",
     "cors": "^2.8.5",
     "ejs": "^2.7.4",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mongoose": "^5.8.11",
     "morgan": "^1.9.1",
     "multipart": "^0.1.5",
